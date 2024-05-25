@@ -6,6 +6,7 @@ public class Application {
 
     private List<Department> departments;
 
+
     /**
      * The main entry point in the application
      * @param args
@@ -43,9 +44,13 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private void createDepartments() {
-        departments.add(1,"Marketing");
-        departments.add(2,"Sales");
-        departments.add(3,"Engineering");
+
+        departments.add(new Department(1, "Marketing"));
+        departments.add(new Department(2, "Sales"));
+        departments.add( new Department(3,"Engineering"));
+
+
+
     }
 
     /**
@@ -53,7 +58,9 @@ public class Application {
      */
     private void printDepartments() {
         System.out.println("------------- DEPARTMENTS ------------------------------");
-
+        for (Department d: departments){
+            System.out.println(d.getName());
+        }
     }
 
     /**
