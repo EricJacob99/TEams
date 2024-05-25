@@ -7,6 +7,8 @@ public class Application {
     private List<Department> departments;
 
 
+    private List<Employee> employees;
+
     /**
      * The main entry point in the application
      * @param args
@@ -44,13 +46,9 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private void createDepartments() {
-
         departments.add(new Department(1, "Marketing"));
         departments.add(new Department(2, "Sales"));
         departments.add( new Department(3,"Engineering"));
-
-
-
     }
 
     /**
@@ -68,6 +66,10 @@ public class Application {
      */
     private void createEmployees() {
 
+        employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(3),"08/21/2020"));
+        employees.add(new Employee(2,"Angie","Smith","asmith@teams.com",departments.get(3),"08/21/2020"));
+        employees.add(new Employee(3,"Margaret","Thompson","mthompson@teams.com",departments.get(1),"08/21/2020"));
+
     }
 
     /**
@@ -75,7 +77,9 @@ public class Application {
      */
     private void printEmployees() {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
-
+        for (Employee e: employees){
+            System.out.println(e.getLastName() + ", " + e.getFirstName() + " (" + e.getSalary() + ") " + e.getDepartment());
+        }
     }
 
     /**

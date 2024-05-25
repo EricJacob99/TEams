@@ -73,7 +73,7 @@ public class Employee {
 
     public static double STARTING_SALARY = 60000.00;
 
-    public Employee(long employeeId, String firstName, String lastName, String email, String hireDate, Department department) {
+    public Employee(long employeeId, String firstName, String lastName, String email, Department department, String hireDate) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
