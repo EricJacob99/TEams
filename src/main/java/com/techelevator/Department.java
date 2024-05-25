@@ -22,7 +22,7 @@ public class Department {
         this.departmentId = departmentId;
     }
 
-    public Department(String name, int departmentId) {
+    public Department(int departmentId, String name) {
         this.name = name;
         this.departmentId = departmentId;
     }

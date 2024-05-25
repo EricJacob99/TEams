@@ -1,9 +1,19 @@
 package com.techelevator;
 
 public class Employee {
-
-
     private long employeeId;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String email;
+
+    private double salary;
+
+    private String hireDate;
+
+    private Department department;
 
     public long getEmployeeId() {
         return employeeId;
@@ -53,23 +63,17 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
-    private String firstName;
-
-    private String lastName;
-    private String email;
-
-    private double salary;
     public static double STARTING_SALARY = 60000.00;
 
-    public Employee(long employeeId, String firstName, String lastName, String email, String hireDate, String department) {
+    public Employee(long employeeId, String firstName, String lastName, String email, String hireDate, Department department) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -90,6 +94,5 @@ public class Employee {
     public double raiseSalary(double percent){
         return this.salary * percent;
     }
-    private String hireDate;
-    private String department;
+
 }

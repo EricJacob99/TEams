@@ -1,6 +1,10 @@
 package com.techelevator;
 
+import java.util.List;
+
 public class Application {
+
+    private List<Department> departments;
 
     /**
      * The main entry point in the application
@@ -39,6 +43,9 @@ public class Application {
      * Create departments and add them to the collection of departments
      */
     private void createDepartments() {
+        departments.add(1,"Marketing");
+        departments.add(2,"Sales");
+        departments.add(3,"Engineering");
     }
 
     /**
