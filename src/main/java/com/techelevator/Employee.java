@@ -48,11 +48,18 @@ public class Employee {
     }
 
     public double getSalary() {
-        return salary;
+        return this.salary;
     }
 
-    public void setSalary(double salary) {
+    public static double STARTING_SALARY = 60000.00;
+
+    public void setSalary() {
         this.salary = salary;
+    }
+
+    public double raiseSalary(double percent){
+        this.salary = this.salary * (1+(percent/100));
+        return this.salary;
     }
 
     public String getHireDate() {
@@ -71,28 +78,22 @@ public class Employee {
         this.department = department;
     }
 
-    public static double STARTING_SALARY = 60000.00;
-
     public Employee(long employeeId, String firstName, String lastName, String email, Department department, String hireDate) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.salary = STARTING_SALARY;
         this.hireDate = hireDate;
         this.department = department;
     }
 
     public Employee() {
         Employee newEmployee = new Employee();
-
     }
     public String getFullName(){
-        return this.firstName + " " + this.lastName;
+        return this.lastName + ", " + this.firstName;
 
-    }
-
-    public double raiseSalary(double percent){
-        return this.salary * percent;
     }
 
 }

@@ -1,13 +1,18 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Application {
 
-    private List<Department> departments;
+    private List<Department> departments = new ArrayList<>();
 
 
-    private List<Employee> employees;
+    private List<Employee> employees = new ArrayList<>();
+
+    private Map<String,Project> projects = new HashMap<>();
 
     /**
      * The main entry point in the application
@@ -29,6 +34,7 @@ public class Application {
         createEmployees();
 
         // give Angie a 10% raise, she is doing a great job!
+        employees.get(1).raiseSalary(10.0);
 
         // print all employees
         printEmployees();
@@ -48,7 +54,7 @@ public class Application {
     private void createDepartments() {
         departments.add(new Department(1, "Marketing"));
         departments.add(new Department(2, "Sales"));
-        departments.add( new Department(3,"Engineering"));
+        departments.add(new Department(3,"Engineering"));
     }
 
     /**
@@ -65,10 +71,19 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private void createEmployees() {
+//  ***   Employee newEmployee = new Employee();
+//        newEmployee.setEmployeeId(1);
+//        newEmployee.setFirstName("Dean");
+//        newEmployee.setLastName("Johnson");
+//        newEmployee.setEmail("djohnson@teams.com");
+//        newEmployee.setDepartment(departments.get(2));
+//        newEmployee.setHireDate("08/21/2020");
+//
+//        employees.add(newEmployee);
 
-        employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(3),"08/21/2020"));
-        employees.add(new Employee(2,"Angie","Smith","asmith@teams.com",departments.get(3),"08/21/2020"));
-        employees.add(new Employee(3,"Margaret","Thompson","mthompson@teams.com",departments.get(1),"08/21/2020"));
+        employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(2),"08/21/2020"));
+        employees.add(new Employee(2,"Angie","Smith","asmith@teams.com",departments.get(2),"08/21/2020"));
+        employees.add(new Employee(3,"Margaret","Thompson","mthompson@teams.com",departments.get(0),"08/21/2020"));
 
     }
 
@@ -78,7 +93,9 @@ public class Application {
     private void printEmployees() {
         System.out.println("\n------------- EMPLOYEES ------------------------------");
         for (Employee e: employees){
-            System.out.println(e.getLastName() + ", " + e.getFirstName() + " (" + e.getSalary() + ") " + e.getDepartment());
+            System.out.print(e.getFullName());
+            System.out.print(" (" + e.getSalary() + ") ");
+            System.out.println((e.getDepartment().getName()));
         }
     }
 
@@ -86,6 +103,7 @@ public class Application {
      * Create the 'TEams' project.
      */
     private void createTeamsProject() {
+
 
     }
 
