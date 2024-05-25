@@ -84,7 +84,6 @@ public class Application {
         employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(2),"08/21/2020"));
         employees.add(new Employee(2,"Angie","Smith","asmith@teams.com",departments.get(2),"08/21/2020"));
         employees.add(new Employee(3,"Margaret","Thompson","mthompson@teams.com",departments.get(0),"08/21/2020"));
-
     }
 
     /**
@@ -107,10 +106,9 @@ public class Application {
         projects.put("TEams", projectTeams);
         List<Employee> engineeringEmployees = new ArrayList<>();
         for (Employee e : employees) {
-            if (e.getDepartment().getDepartmentId() == 1) {
+            if (e.getDepartment().getDepartmentId() == 3) {
                 engineeringEmployees.add(e);
             }
-
         }
         projectTeams.setTeamMembers(engineeringEmployees);
     }    
@@ -119,7 +117,15 @@ public class Application {
          * Create the 'Marketing Landing Page' project.
          */
     private void createLandingPageProject() {
-
+        Project landingPageProject = new Project("Marketing Landing Page", "Lead Capture Landing Page for Marketing", "10/10/2020", "10/17/2020");
+        projects.put("Marketing Landing Page", landingPageProject);
+        List<Employee> marketingEmployees = new ArrayList<>();
+        for (Employee e : employees) {
+            if (e.getDepartment().getDepartmentId() == 1) {
+                marketingEmployees.add(e);
+            }
+        }
+        landingPageProject.setTeamMembers(marketingEmployees);
     }
 
     /**
@@ -127,6 +133,9 @@ public class Application {
      */
     private void printProjectsReport() {
         System.out.println("\n------------- PROJECTS ------------------------------");
+        for (Map.Entry<String, Project> project : projects.entrySet()) {
+            System.out.println(project.getKey() + ": " + project.getValue().getTeamMembers().size());
+        }
 
     }
 
