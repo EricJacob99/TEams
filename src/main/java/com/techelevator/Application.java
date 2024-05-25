@@ -103,13 +103,21 @@ public class Application {
      * Create the 'TEams' project.
      */
     private void createTeamsProject() {
+        Project projectTeams = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
+        projects.put("TEams", projectTeams);
+        List<Employee> engineeringEmployees = new ArrayList<>();
+        for (Employee e : employees) {
+            if (e.getDepartment().getDepartmentId() == 1) {
+                engineeringEmployees.add(e);
+            }
 
+        }
+        projectTeams.setTeamMembers(engineeringEmployees);
+    }    
 
-    }
-
-    /**
-     * Create the 'Marketing Landing Page' project.
-     */
+        /**
+         * Create the 'Marketing Landing Page' project.
+         */
     private void createLandingPageProject() {
 
     }
