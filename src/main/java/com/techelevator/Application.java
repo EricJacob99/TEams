@@ -71,17 +71,17 @@ public class Application {
      * Create employees and add them to the collection of employees
      */
     private void createEmployees() {
-//  ***   Employee newEmployee = new Employee();
-//        newEmployee.setEmployeeId(1);
-//        newEmployee.setFirstName("Dean");
-//        newEmployee.setLastName("Johnson");
-//        newEmployee.setEmail("djohnson@teams.com");
-//        newEmployee.setDepartment(departments.get(2));
-//        newEmployee.setHireDate("08/21/2020");
-//
-//        employees.add(newEmployee);
+        Employee newEmployee = new Employee();
+        newEmployee.setEmployeeId(1);
+        newEmployee.setFirstName("Dean");
+        newEmployee.setLastName("Johnson");
+        newEmployee.setEmail("djohnson@teams.com");
+        newEmployee.setDepartment(departments.get(2));
+        newEmployee.setHireDate("08/21/2020");
 
-        employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(2),"08/21/2020"));
+        employees.add(newEmployee);
+
+ //       employees.add(new Employee(1,"Dean","Johnson","djohnson@teams.com",departments.get(2),"08/21/2020"));
         employees.add(new Employee(2,"Angie","Smith","asmith@teams.com",departments.get(2),"08/21/2020"));
         employees.add(new Employee(3,"Margaret","Thompson","mthompson@teams.com",departments.get(0),"08/21/2020"));
     }

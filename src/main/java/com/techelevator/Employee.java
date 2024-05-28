@@ -89,7 +89,13 @@ public class Employee {
     }
 
     public Employee() {
-        Employee newEmployee = new Employee();
+        this.employeeId = 0;
+        this.firstName = "";
+        this.lastName = "";
+        this.email = "";
+        this.salary = STARTING_SALARY;
+        this.hireDate = "";
+        this.department = null;
     }
     public String getFullName(){
         return this.lastName + ", " + this.firstName;
